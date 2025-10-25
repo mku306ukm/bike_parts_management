@@ -1,0 +1,563 @@
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --success: #2ecc71;
+    --warning: #f1c40f;
+    --danger: #e74c3c;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg: #f9fafb;
+    --card: #ffffff;
+    --border: #edf2f7;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --radius: 12px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #f6f8fa 0%, #f1f4f8 100%);
+    color: var(--text);
+    line-height: 1.5;
+    padding-bottom: 60px;
+}
+
+.container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+    padding: 1.5rem 0;
+    box-shadow: var(--shadow-lg);
+}
+
+.header-inner {
+    text-align: center;
+}
+
+.main-header h1 {
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.top-nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.nav-btn {
+    padding: 0.75rem 1.5rem;
+    background: white;
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+}
+
+.nav-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 2rem;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+.form-card {
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), 0 8px 24px rgba(52, 152, 219, 0.1);
+}
+
+.form-card h2 {
+    margin: 0 0 1.5rem;
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.grid-form input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: white;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.grid-form input.price-input {
+    height: 50px;
+    width: 100%; /* Make it full width like other inputs */
+}
+
+/* Update grid-form to ensure equal columns */
+.grid-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.grid-form input:disabled,
+.grid-form input:readonly {
+    background: #f8f9fa;
+    cursor: not-allowed;
+}
+
+.grid-form input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.grid-form input::placeholder {
+    color: var(--text-light);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+    grid-column: 1 / -1;  /* Make it span full width in grid */
+}
+
+.form-actions > * {
+    margin: 0 0.5rem;
+}
+
+/* Optional: if you want to adjust button widths to be equal */
+.action-btn {
+    min-width: 150px;
+    text-align: center;
+}
+
+.action-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#btnAddPurchase {
+    background: var(--accent);
+    color: white;
+}
+
+#btnAddPurchase:hover {
+    background: #2980b9;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+#btnAddSale {
+    background: var(--success);
+    color: white;
+}
+
+#btnAddSale:hover {
+    background: #27ae60;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.table-card {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.table-card h3 {
+    margin: 0 0 15px 0;
+    color: var(--primary);
+    font-size: 1.25rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(to right, #f8f9fa, #ffffff);
+    text-align: center;
+}
+
+/* Table Styles */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #dee2e6;
+    background: white;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #dee2e6;
+    padding: 8px 12px;
+    text-align: center !important; /* Force center alignment */
+    vertical-align: middle;
+}
+
+/* Remove right alignment from numeric cells */
+.data-table td.num {
+    text-align: center !important; /* Override previous right alignment */
+    font-family: 'Consolas', monospace;
+}
+
+/* Keep headers consistent */
+.data-table thead th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 2px solid #dee2e6;
+    text-align: center;
+}
+
+/* Hover effect */
+.data-table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Even row styling */
+.data-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Keep numbers right-aligned */
+.data-table td.num {
+    text-align: right;
+    font-family: 'Consolas', monospace;
+}
+
+/* Table container with horizontal scroll if needed */
+.table-wrap {
+    position: relative;
+    overflow: auto;
+    max-height: calc(100vh - 300px); /* Adjust based on your layout */
+    margin: 20px 0;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px #dee2e6;
+}
+
+/* Sticky table header */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 996;
+    background: linear-gradient(90deg, #f7fbfc, #fbfcfd);
+}
+
+.sticky-header th {
+    background: linear-gradient(90deg, #f7fbfc, #fbfcfd);
+    border-bottom: 2px solid var(--border);
+}
+
+/* Shadow effect for sticky elements */
+.sticky-search::after,
+.sticky-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 5px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.05), transparent);
+    pointer-events: none;
+}
+
+/* Ensure proper layering */
+.main-header { z-index: 999; }
+.sticky-search { z-index: 998; }
+.sticky-header { z-index: 997; }
+.site-footer { z-index: 996; }
+
+.page-nav {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.page-nav .nav-btn {
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    color: #495057;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.page-nav .nav-btn:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+}
+
+.page-nav .back-btn {
+    margin: 0;
+}
+
+/* Stylish Back to Home Button */
+.back-btn {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.back-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+}
+
+.back-btn:hover::before {
+    transform: translateX(100%);
+}
+
+.back-btn i {
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover i {
+    transform: translateX(-3px);
+}
+
+.search-container {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.page-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: white;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-info {
+    font-weight: 600;
+    color: var(--text-light);
+    padding: 0 1rem;
+}
+
+/* Sticky search bar */
+.sticky-search {
+    position: sticky;
+    top: 62px; /* Adjust based on your header height */
+    z-index: 997;
+    background: linear-gradient(180deg, rgba(246,248,250,0.95) 0%, rgba(246,248,250,0.95) 100%);
+    padding: 10px 0;
+    margin: -10px 0;
+    backdrop-filter: blur(8px);
+}
+
+.search-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+/* Footer Styles */
+.site-footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Actions container in table rows */
+.row-actions {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Ensure action cell content is right aligned */
+.data-table td:last-child {
+    text-align: right;
+    white-space: nowrap;
+    padding-right: 12px;
+}
+
+/* Small visual differences for edit/delete buttons */
+.page-btn.edit-btn { background: #fff; border: 1px solid #b9d7f5; color: #1f6fb2; }
+.page-btn.delete-btn { background: #fff; border: 1px solid #f5b9b9; color: #b21f1f; }
+.page-btn.edit-btn:hover { background: #e9f4ff; }
+.page-btn.delete-btn:hover { background: #fff0f0; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    
+    .form-card {
+        padding: 1.5rem;
+    }
+    
+    .grid-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .top-nav {
+        flex-direction: column;
+    }
+    
+    .nav-btn {
+        text-align: center;
+    }
+    
+    .page-nav {
+        flex-direction: column;
+    }
+    
+    .search-container {
+        width: 100%;
+    }
+    
+    .table-wrap {
+        margin: 0 -1rem;
+    }
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2980b9;
+}

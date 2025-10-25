@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Bike Parts Management</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-inner">
+            <h1><i class="fas fa-motorcycle"></i> Bike Parts Management</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card form-card" aria-labelledby="formTitle">
+            <h2 id="formTitle"><i class="fas fa-plus-circle"></i> Quick Entry</h2>
+
+            <form id="partsForm" onsubmit="return false;" class="grid-form">
+                <input type="date" id="date" />
+
+                <input type="text" id="partNumber" placeholder="Part Number" autocomplete="off" />
+
+                <input type="text" id="partName" placeholder="Part Name" autocomplete="off" />
+
+                <input type="number" id="quantity" placeholder="Quantity" min="1" step="1" />
+
+                <input type="number" id="price" placeholder="Price" min="0" step="0.01" />
+
+                <input type="text" id="totalPrice" placeholder="Total Price" readonly />
+
+                <div class="form-actions" style="grid-column: 1 / -1;">
+                    <button type="button" class="action-btn" id="btnAddPurchase">
+                        <i class="fas fa-cart-plus"></i> Add Purchase
+                    </button>
+                    <button type="button" class="action-btn" id="btnAddSale">
+                        <i class="fas fa-cash-register"></i> Add Sale
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <nav class="top-nav" role="navigation" aria-label="Primary">
+            <a href="purchase.html" class="nav-btn"><i class="fas fa-shopping-cart"></i> View Purchase</a>
+            <a href="sales.html" class="nav-btn"><i class="fas fa-chart-line"></i> View Sales</a>
+            <a href="stock.html" class="nav-btn"><i class="fas fa-box"></i> View Stock</a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">Horizon Honda Satbarwa</div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
